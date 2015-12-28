@@ -17,7 +17,7 @@ public class Text {
 		int i = 100;
 		if (wor.numberOfLetters(i)!=-1){
 			System.out.println(wor.numberOfLetters(i));
-		}
+		} else System.out.println("Enter another number, please.");
 		
 	}
 	

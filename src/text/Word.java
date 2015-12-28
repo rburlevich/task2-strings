@@ -33,7 +33,7 @@ public class Word {
 			String a = listOfWords.get(numberOfWord);
 			return a.length();
 		} else {
-			System.out.println("Enter another number, please.");
+			
 			return -1;
 		}
 		
