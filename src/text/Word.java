@@ -5,9 +5,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Word {
-	ArrayList<String> sentences = new ArrayList<>();
+	private ArrayList<String> sentences = new ArrayList<>();
 	Word(ArrayList<String> sentences){
 		this.sentences = sentences;
+		cutWords();
 	}
 	ArrayList<String> listOfWords = new ArrayList<>();
 	public void cutWords(){
@@ -19,10 +20,23 @@ public class Word {
 			}
 			
 		}
-		
+		int i = 0;
 		for (String str : listOfWords){
-			System.out.println(str);
+			System.out.println((i++)+". "+str);
 		}
+	
+		
+	}
+	
+	public int numberOfLetters(int numberOfWord){
+		if(listOfWords.size()>=numberOfWord){
+			String a = listOfWords.get(numberOfWord);
+			return a.length();
+		} else {
+			System.out.println("Enter another number, please.");
+			return -1;
+		}
+		
 		
 	}
 

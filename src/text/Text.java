@@ -13,9 +13,12 @@ public class Text {
 		this.text = text;
 		getText(this.text);
 		sent = new Sentence(text);
-		cutSent();
 		wor = new Word(sent.listOfSentences);
-		cutWord();
+		int i = 100;
+		if (wor.numberOfLetters(i)!=-1){
+			System.out.println(wor.numberOfLetters(i));
+		}
+		
 	}
 	
 	private void getText(String str){
@@ -25,12 +28,12 @@ public class Text {
 	
 	private void cutSent(){
 		System.out.println("\n---Sentences---");
-		sent.cutSentences();
+
 	}
 	
 	private void cutWord(){
 		System.out.println("\n---Words---");
-		wor.cutWords();
+
 	}
 	
 
