@@ -12,7 +12,7 @@ public class Word {
 	ArrayList<String> listOfWords = new ArrayList<>();
 	public void cutWords(){
 		for (String sent : sentences){
-			Pattern p = Pattern.compile("[[A-Za-z]+|\\.|\\?|:|,|!|-]");
+			Pattern p = Pattern.compile("[\\.|,|:|-|—]|[A-Za-z+’a-z+]+|[A-Za-z]+");
 			Matcher m = p.matcher(sent);
 			while (m.find()){
 				listOfWords.add(m.group());

@@ -11,7 +11,7 @@ public class Sentence {
 	}
 	public ArrayList<String> listOfSentences = new ArrayList<>();
 	public void cutSentences(){
-		Pattern p = Pattern.compile("[A-Z][a-z]+[ |A-Za-z|\\-|,|A-Za-z+:|A-Za-z+;]*[\\.|\\?|!]");
+		Pattern p = Pattern.compile("[A-Z][a-z]+[ |A-Za-z|\\-|—|,|A-Za-z+:|A-Za-z+;|A-Za-z+’a-z+]*[\\.|\\?|!]");
 		Matcher m = p.matcher(text);
 		while (m.find()){
 			listOfSentences.add(m.group());

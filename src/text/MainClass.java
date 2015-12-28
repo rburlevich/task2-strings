@@ -2,8 +2,9 @@ package text;
 
 public class MainClass {
 	public static void main(String args[]){
-		Text text = new Text("Obama - made a similar stop in Roseburg pre. In October after a shooting at a community college there. His private meetings with. Ramilies of mass CAS shooting victims: have become a distinctive feature of Obamas highly: personal approach to comforting victims!");
-		
+		String text = "Let me say this: bein a idiot is no box of chocolates. People laugh, lose patience, treat you shabby. Now they says folks sposed to be kind to the afflicted, but let me tell you—it ain’t always that way. Even so, I got no complaints, cause I reckon I done live a pretty interestin life, so to speak.";
+		Text newText = new Text(text);
+	
 	}
 
 }
