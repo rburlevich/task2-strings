@@ -8,6 +8,7 @@ public class Sentence {
 	String text;
 	Sentence(String text){
 		this.text = text;
+		cutSentences();
 	}
 	public ArrayList<String> listOfSentences = new ArrayList<>();
 	public void cutSentences(){
