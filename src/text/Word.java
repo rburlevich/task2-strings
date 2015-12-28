@@ -32,10 +32,8 @@ public class Word {
 		if(listOfWords.size()>=numberOfWord){
 			String a = listOfWords.get(numberOfWord);
 			return a.length();
-		} else {
-			
-			return -1;
-		}
+		} else return -1;
+		
 		
 		
 	}
