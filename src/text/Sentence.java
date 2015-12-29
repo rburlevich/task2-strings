@@ -36,13 +36,9 @@ public class Sentence {
 			for (String str : listOfWords){
 				if(str.equals(word)){
 					return true;
-					
 				} 
-					
 			}
-			
 		}
 		return false;
 	}
-
 }
