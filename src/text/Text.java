@@ -14,10 +14,12 @@ public class Text {
 		getText(this.text);
 		sent = new Sentence(text);
 		wor = new Word(sent.listOfSentences);
-		int i = 100;
+		int i = 10;
 		if (wor.numberOfLetters(i)!=-1){
 			System.out.println(wor.numberOfLetters(i));
 		} else System.out.println("Enter another number, please.");
+		
+		System.out.println(sent.findOfWord("you", 1));
 		
 	}
 	

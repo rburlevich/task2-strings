@@ -24,5 +24,25 @@ public class Sentence {
 			
 		
 	}
+	
+	public boolean findOfWord(String word, int i){
+		if(listOfSentences.size()>=i){
+			ArrayList<String> listOfWords = new ArrayList<>();
+			Pattern p = Pattern.compile("[\\.|,|:|-|—]|[A-Za-z+’a-z+]+|[A-Za-z]+");
+			Matcher m = p.matcher(listOfSentences.get(i));
+			while (m.find()){
+				listOfWords.add(m.group());
+			}
+			for (String str : listOfWords){
+				if(str.equals(word)){
+					return true;
+					
+				} 
+					
+			}
+			
+		}
+		return false;
+	}
 
 }
