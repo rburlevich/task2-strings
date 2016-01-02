@@ -5,32 +5,33 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Word {
-	private ArrayList<String> sentences = new ArrayList<>();
+	//private ArrayList<String> sentences = new ArrayList<>();
 	Word(ArrayList<String> sentences){
-		this.sentences = sentences;
-		cutWords();
+		for (String sent : sentences){
+			listOfWords1 = cutWords(sent);
+		}
+		
 	}
 	
-	ArrayList<String> listOfWords = new ArrayList<>(); // List of words
+	ArrayList<String> listOfWords1 = new ArrayList<>(); // List of words
 	
 	/** 
 	 * This method cut words from the sentences
 	 * */
-	public void cutWords(){              
-		for (String sent : sentences){
-			Pattern p = Pattern.compile("[\\.|,|:|-|—]|[A-Za-z+’a-z+]+|[A-Za-z]+");
-			Matcher m = p.matcher(sent);
-			while (m.find()){
-				listOfWords.add(m.group());
-			}
+	public static ArrayList<String> cutWords(String sentence){ 
+		ArrayList<String> listOfWords = new ArrayList<>();
+        Pattern p = Pattern.compile("[\\.|,|:|-|—]|[A-Za-z+’a-z+]+|[A-Za-z]+");
+		Matcher m = p.matcher(sentence);
+		while (m.find()){
+			listOfWords.add(m.group());
 		}
-		
+        return listOfWords;
 	}
 	
 	public void printWords(){ // This method prints all words
 		System.out.println("---List of Words---");
 		int i = 0;
-		for (String str : listOfWords){ 
+		for (String str : listOfWords1){ 
 			System.out.println((i++)+". "+str);
 		}
 		System.out.println();
@@ -50,8 +51,8 @@ public class Word {
 	}
 	
 	private int numberOfLetters(int numberOfWord){ 
-		if(listOfWords.size()>=numberOfWord){
-			String a = listOfWords.get(numberOfWord);
+		if(listOfWords1.size()>=numberOfWord){
+			String a = listOfWords1.get(numberOfWord);
 			return a.length();
 		} else return -1;
 	}

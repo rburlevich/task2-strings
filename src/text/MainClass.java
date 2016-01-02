@@ -16,6 +16,8 @@ public class MainClass {
 		System.out.println(sent.findOfWord("you", 1));
 		
 		word.printNumberOfLetters(3); 
+		
+		System.out.println(sent.changeingPositionOfWords(1, 0, 1));
 	
 	}
 

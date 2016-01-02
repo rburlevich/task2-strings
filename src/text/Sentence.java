@@ -55,4 +55,25 @@ public class Sentence {
 		}
 		return false;
 	}
+	
+	/** 
+	 * This method change positions of words in the sentence
+	 * */
+	
+	public String changeingPositionOfWords(int numberOfSentence, int numberOfWord1, int numberOfWord2){
+		String str = "";
+		if(listOfSentences.size()>=numberOfSentence){
+			ArrayList<String> listOfWords = new ArrayList<>();
+			listOfWords = Word.cutWords(listOfSentences.get(numberOfSentence));
+			if (numberOfWord1<=listOfWords.size() && numberOfWord2<=listOfWords.size() ){
+				String word1 = listOfWords.get(numberOfWord1);
+				listOfWords.set(numberOfWord1, listOfWords.get(numberOfWord2));
+				listOfWords.set(numberOfWord2, word1);
+				for (String a : listOfWords){
+					str = str + " " + a;
+				}
+			} else return "Word #"+numberOfWord1+" or #"+numberOfWord2+" is absent. Select another word, please!";
+		} else return "Sentence #"+numberOfSentence+" is absent. Select another sentence, please!";
+		return str;
+	}
 }
