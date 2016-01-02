@@ -10,21 +10,35 @@ public class Sentence {
 		this.text = text;
 		cutSentences();
 	}
-	public ArrayList<String> listOfSentences = new ArrayList<>();
-	public void cutSentences(){
+	
+	public ArrayList<String> listOfSentences = new ArrayList<>(); // The list of sentences
+	
+	/** 
+	 * This method cut sentences from the text
+	 * */
+	private void cutSentences(){
 		Pattern p = Pattern.compile("[A-Z][a-z]+[ |A-Za-z|\\-|—|,|A-Za-z+:|A-Za-z+;|A-Za-z+’a-z+]*[\\.|\\?|!]");
 		Matcher m = p.matcher(text);
 		while (m.find()){
 			listOfSentences.add(m.group());
-			//System.out.println(m.group());
 		}	
-		for (String sent : listOfSentences){
+    }
+	
+	public void printSentences(){ // This method prints all sentences 
+		System.out.println("---List of Sentences---");
+		for (String sent : listOfSentences){  
 			System.out.println(sent);
 		}
-			
-		
+		System.out.println();
 	}
 	
+	/** 
+	 * This method find a word in a sentence
+	 * @param 
+	 * 1. String - a word which need find
+	 * 2. Number of sentence in which find word
+	 * 
+	 * */
 	public boolean findOfWord(String word, int i){
 		if(listOfSentences.size()>=i){
 			ArrayList<String> listOfWords = new ArrayList<>();

@@ -1,42 +1,24 @@
 package text;
 
-
-
-
 public class Text {
 	
-	private String text;
-	Sentence sent;
-	Word wor;
+	private String text; // TEXT
+	
 	
 	public Text(String text) {
 		this.text = text;
-		getText(this.text);
-		sent = new Sentence(text);
-		wor = new Word(sent.listOfSentences);
-		int i = 10;
-		if (wor.numberOfLetters(i)!=-1){
-			System.out.println(wor.numberOfLetters(i));
-		} else System.out.println("Enter another number, please.");
-		
-		System.out.println(sent.findOfWord("you", 1));
-		
+	
 	}
 	
-	private void getText(String str){
+	public void printText(){ // Print text
 		System.out.println("---Text---");
-		System.out.println(str);
+		System.out.println(text+"\n");
 	}
 	
-	private void cutSent(){
-		System.out.println("\n---Sentences---");
-
+	public String getText(){  // Return text
+		return text;
 	}
 	
-	private void cutWord(){
-		System.out.println("\n---Words---");
-
-	}
 	
 
 }
