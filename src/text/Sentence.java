@@ -78,4 +78,18 @@ public class Sentence {
 		} else return "Sentence #"+numberOfSentence+" is absent. Select another sentence, please!";
 		return str.trim();
 	} 
+	
+	/**
+	 * This method deletes a substring from a string
+	 * */
+	
+	public String deletetingOfSubstring(int numberOfSentence, char a, char b){
+		String str = "";
+		if(listOfSentences.size()>=numberOfSentence){
+			if (listOfSentences.get(numberOfSentence).indexOf(a)!=-1 & listOfSentences.get(numberOfSentence).indexOf(b)!=-1){
+				str = listOfSentences.get(numberOfSentence).replace(listOfSentences.get(numberOfSentence).substring(listOfSentences.get(numberOfSentence).indexOf(a), listOfSentences.get(numberOfSentence).lastIndexOf(b)), "");
+			} else return "There's no such substring";
+		} else return "There's no such sentence";
+		return str;
+	}
 }

@@ -18,6 +18,8 @@ public class MainClass {
 		word.printNumberOfLetters(3); 
 		
 		System.out.println(sent.changeingPositionOfWords(0, 3, 5));
+		
+		System.out.println(sent.deletetingOfSubstring(0,'m','c'));
 	
 	}
 
