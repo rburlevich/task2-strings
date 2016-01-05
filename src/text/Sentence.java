@@ -70,10 +70,12 @@ public class Sentence {
 				listOfWords.set(numberOfWord1, listOfWords.get(numberOfWord2));
 				listOfWords.set(numberOfWord2, word1);
 				for (String a : listOfWords){
-					str = str + " " + a;
+					if (a.equals(".")|a.equals(",")|a.equals(";")|a.equals(":")|a.equals("!")|a.equals("?")){
+						str = str + a;
+					} else str = str + " " + a;
 				}
 			} else return "Word #"+numberOfWord1+" or #"+numberOfWord2+" is absent. Select another word, please!";
 		} else return "Sentence #"+numberOfSentence+" is absent. Select another sentence, please!";
-		return str;
+		return str.trim();
 	}
 }

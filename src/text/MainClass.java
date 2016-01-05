@@ -17,7 +17,7 @@ public class MainClass {
 		
 		word.printNumberOfLetters(3); 
 		
-		System.out.println(sent.changeingPositionOfWords(1, 0, 1));
+		System.out.println(sent.changeingPositionOfWords(0, 3, 5));
 	
 	}
 
