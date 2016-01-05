@@ -77,5 +77,5 @@ public class Sentence {
 			} else return "Word #"+numberOfWord1+" or #"+numberOfWord2+" is absent. Select another word, please!";
 		} else return "Sentence #"+numberOfSentence+" is absent. Select another sentence, please!";
 		return str.trim();
-	}
+	} 
 }
