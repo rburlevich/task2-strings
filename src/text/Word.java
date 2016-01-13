@@ -20,7 +20,7 @@ public class Word {
 	 * */
 	public static ArrayList<String> cutWords(String sentence){ 
 		ArrayList<String> listOfWords = new ArrayList<>();
-        Pattern p = Pattern.compile("[\\.|,|:|-|—]|[A-Za-z+’a-z+]+|[A-Za-z]+");
+        Pattern p = Pattern.compile("[\\.|,|:|-|—|\\?]|[A-Za-z+’a-z+]+|[A-Za-z]+");
 		Matcher m = p.matcher(sentence);
 		while (m.find()){
 			listOfWords.add(m.group());

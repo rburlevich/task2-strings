@@ -26,7 +26,7 @@ public class Sentence {
 	
 	public void printSentences(){ // This method prints all sentences 
 		System.out.println("---List of Sentences---");
-		for (String sent : listOfSentences){  
+		for (String sent : listOfSentences){
 			System.out.println(sent);
 		}
 		System.out.println();
@@ -91,5 +91,43 @@ public class Sentence {
 			} else return "There's no such substring";
 		} else return "There's no such sentence";
 		return str;
+	}
+
+	public String test1(){
+		ArrayList<String> strBuff = new ArrayList();
+		for (String str : listOfSentences){
+			if (str.charAt(str.length()-1)!='?'){
+				strBuff.add(str);
+				System.out.println("trase------no question------->"+str);
+			} else {
+				System.out.println("trase------question------->"+str);
+				ArrayList<String> strBuff2 = Word.cutWords(str);
+				for (String strt : strBuff2){
+					ArrayList<StringBuffer> strBuff3 = new ArrayList();
+					StringBuffer strt2= new StringBuffer(strt.subSequence(0, strt.length()));
+					System.out.println("trase------word from question------->"+strt2);
+					for (int i=1; i<=strt2.length()-1; i++){
+						if (strt2.charAt(i)==strt2.charAt(0)){
+							strt2.deleteCharAt(i);
+							i=i-1;
+						}
+					}
+					strBuff3.add(strt2);
+					StringBuffer strt3 = new StringBuffer("");
+					for (StringBuffer strt4 : strBuff3){
+						strt3.append(strt4);
+						System.out.println("trase------question-----------------sent------->"+strt3);
+					}
+					System.out.println("trase------question-----------------sent2------->"+strt3);
+					strBuff.add(strt3.toString());
+				}
+
+			}
+		}
+		String st="";
+		for (String ss : strBuff){
+			st = st + ss + " ";
+		}
+		return st;
 	}
 }
