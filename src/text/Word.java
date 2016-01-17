@@ -13,10 +13,10 @@ public class Word {
 		
 	}
 	
-	ArrayList<String> listOfWords1 = new ArrayList<>(); // List of words
+	public static ArrayList<String> listOfWords1 = new ArrayList<>(); // List of words
 	
 	/** 
-	 * This method cut words from the sentences
+	 * This method cut words from the sentence
 	 * */
 	public static ArrayList<String> cutWords(String sentence){ 
 		ArrayList<String> listOfWords = new ArrayList<>();
@@ -28,32 +28,4 @@ public class Word {
         return listOfWords;
 	}
 	
-	public void printWords(){ // This method prints all words
-		System.out.println("---List of Words---");
-		int i = 0;
-		for (String str : listOfWords1){ 
-			System.out.println((i++)+". "+str);
-		}
-		System.out.println();
-	}
-	
-	/** 
-	 * @param
-	 * int - number of word in text
-	 * 
-	 * This method returns number of letters in the word
-	 * */
-	
-	public void printNumberOfLetters(int i){
-		if (numberOfLetters(i)!=-1){
-			System.out.println(numberOfLetters(i));
-		} else System.out.println("Enter another number, please.");
-	}
-	
-	private int numberOfLetters(int numberOfWord){ 
-		if(listOfWords1.size()>=numberOfWord){
-			String a = listOfWords1.get(numberOfWord);
-			return a.length();
-		} else return -1;
-	}
 }

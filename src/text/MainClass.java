@@ -6,24 +6,10 @@ public class MainClass {
 		
 		Text text = new Text(someText); // Creating of text
 		text.printText(); // Displaying of text
+		text.printSentences();
+		text.printWords();
 		
-		Sentence sent = new Sentence(text.getText()); // Cutting of sentences
-		sent.printSentences(); //Printing of sentences
-		
-		Word word = new Word(sent.listOfSentences); // Cutting of words
-		word.printWords(); //Printing of words
-		
-		System.out.println(sent.findOfWord("you", 1));
-		
-		word.printNumberOfLetters(3); 
-		
-		System.out.println(sent.changeingPositionOfWords(0, 3, 5));
-		
-		System.out.println(sent.deletetingOfSubstring(0,'m','c'));
-		text.printText();
-		System.out.println(sent.test1());
 
-	
 	}
 
 }
