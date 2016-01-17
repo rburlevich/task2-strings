@@ -160,7 +160,41 @@ public class Text {
 		listOfSentences = newListOfSent;
 	}
 
-	
-
+	public String findWords(){
+		String finalString = "";
+		ArrayList<String> listOfwordsSent1 = new ArrayList<String>();
+		ArrayList<String> listOfwordsAnotherSent = new ArrayList<String>();
+		ArrayList<String> listOfReapeatedWords = new ArrayList<String>();
+		Pattern p = Pattern.compile("[A-Za-z]+");
+		Matcher m1 = p.matcher(listOfSentences.get(0));
+		while (m1.find()){
+			listOfwordsSent1.add(m1.group());
+			System.out.println(m1.group());
+		}
+		for (int i=1; i<=listOfSentences.size()-1; i++){
+			Matcher m2 = p.matcher(listOfSentences.get(i));
+			while (m2.find()) {
+				listOfwordsAnotherSent.add(m2.group());
+			}
+		}
+		for (String word : listOfwordsSent1){
+			for (String word2 : listOfwordsAnotherSent){
+				if(word.toLowerCase().equals(word2.toLowerCase())){
+					listOfReapeatedWords.add(word2);
+				}
+			}
+		}
+		for (int x=0;x<=listOfReapeatedWords.size()-1;x++){
+			for (int y=1;y<=listOfReapeatedWords.size()-1;y++){
+				if(x!=y & listOfReapeatedWords.get(x).equals(listOfReapeatedWords.get(y))){
+					listOfReapeatedWords.remove(y);
+				}
+			}
+		}
+		for (String word : listOfReapeatedWords){
+			finalString = finalString + word + " ";
+		}
+		return finalString;
+	}
 
 }
