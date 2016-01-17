@@ -7,8 +7,9 @@ public class MainClass {
 		Text text = new Text(someText); // Creating of text
 		text.printText(); // Displaying of text
 		text.printSentences();
-		text.printWords();
-		
+		text.test1();
+		text.printSentences();
+
 
 	}
 
